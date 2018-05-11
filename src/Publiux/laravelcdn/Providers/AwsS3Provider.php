@@ -375,8 +375,7 @@ class AwsS3Provider extends Provider implements ProviderInterface
         $url = $this->cdn_helper->parseUrl($this->getUrl());
 
         $bucket = $this->getBucket();
-        $bucket = (!empty($bucket)) ? $bucket.'.' : '';
-        return $url['scheme'] . '://' . $url['host'] . '/' . $path;
+        $bucket = (!empty($bucket)) ? $bucket.'.' : '';        
         return $url['scheme'] . '://' . $bucket . $url['host'] . '/' . $path;
     }
 
